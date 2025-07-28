@@ -194,5 +194,5 @@ function openProfile(){
     showToast('Profile coming soon!', 'info');
 }
 function joinCommunity(){
-    showToast('Function coming soon!', 'info');
+    window.location.href = '../pages/community.html';
 }
