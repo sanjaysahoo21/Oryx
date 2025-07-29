@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
     else if (currentPath.endsWith('auth.html')) {
         initializeFadeInAnimations('.animate-fade');
     } 
-    else if (currentPath.endsWith('about.html')) {  
+    else if (currentPath.endsWith('developers.html')) {
         initializeFadeInAnimations('.team-card');
     } 
     else if (currentPath.endsWith('404.html')) {
