@@ -24,16 +24,16 @@
                         <a class="nav-link" href="../index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="developers.html">About</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="discover.html">Discover</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="roadmaps.html">Roadmaps</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="community.html">Developers</a>
+                        <a class="nav-link" href="community.html">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="developers.html">Developers</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center">
@@ -46,7 +46,7 @@
                             <span id="userName">Guest User</span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end bg-secondary">
-                            <li><a class="text-cyan dropdown-item" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
+                            <li><a class="text-cyan dropdown-item" href="../pages/portfolio.html"><i class="bi bi-person me-2"></i>Profile</a></li>
                             <li><a class="text-cyan dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="text-cyan dropdown-item" href="#" onclick="logout()"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
@@ -61,14 +61,51 @@
             <div class="container">
                 <div class="text-center mb-5">
                     <h1 class="display-4 fw-bold mb-4">
-                        <span class="text-cyan">Mentors</span>
+                        <span class="text-cyan">Find Your Mentor</span>
                     </h1>
                     <p class="lead mb-4">
                         Connect with experienced mentors to guide your career journey. Our mentors are here to share their knowledge and help you grow.
                     </p>
                 </div>
+                <div>
+                    <button class="btn btn-primary" onclick="window.location.href='mentor-registration.html'">
+                        Become a Mentor
+                    </button>
+                    <button class="btn btn-primary" onclick="window.location.href='../html/index.html'">
+                        Back to Dashboard
+                    </button>
+                </div>
             </div>
         </section>
+
+    <main class="mentor-page-content">
+        <div class="search-bar">
+            <div class="search-box">
+                <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <input class="search-input" type="text" id="searchInput" placeholder="Search mentors by name or skills">
+            </div>
+            <select id="skillFilter" class="skill-filter">
+                <option value="" hidden>All Skills</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="C++">C++</option>
+            </select>
+        </div>
+
+        <div class="mentors-section">
+            <div id="emptyState" class="empty-state" style="display: block;">
+                <p class="empty-message">No mentors available yet.</p>
+                <button class="btn btn-primary" onclick="window.location.href='mentor-registration.html'">
+                    Be the First Mentor
+                </button>
+            </div>
+            
+            <div id="mentorsGrid" class="mentors-grid">
+                <!-- cards here -->
+            </div>
+        </div>
+    </section>
     </main>
     
     <footer class="bg-dark text-light py-5">
@@ -87,10 +124,10 @@
                     <h5 class="text-primary mb-3">Quick Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="../index.html" class="text-muted text-decoration-none small">Home</a></li>
-                        <li><a href="developers.html" class="text-muted text-decoration-none small">About Us</a></li>
                         <li><a href="discover.html" class="text-muted text-decoration-none small">Discover</a></li>
                         <li><a href="roadmaps.html" class="text-muted text-decoration-none small">Roadmaps</a></li>
                         <li><a href="community.html" class="text-muted text-decoration-none small">Community</a></li>
+                        <li><a href="developers.html" class="text-muted text-decoration-none small">Developers</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">

@@ -156,7 +156,7 @@ function togglePassword(inputId) {
 
 function demoLogin() {
     const userData = {
-        name: 'Demo User',
+        name: 'Harshit Mummidi',
         email: 'demo@skillswappro.com',
         avatar: null
     };

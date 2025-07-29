@@ -98,7 +98,7 @@ class JobSearchManager {
 
         return `
             <div class="col-10 mx-auto">
-                <div class="card list-group-item mb-3 border rounded">
+                <div class="card list-group-item mb-3">
                     <div class="d-flex w-100 justify-content-between align-items-start">
                         <div class="flex-grow-1">
                             <div class="d-flex justify-content-between align-items-start mb-2">
