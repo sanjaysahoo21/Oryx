@@ -67,7 +67,7 @@
                         Connect with experienced mentors to guide your career journey. Our mentors are here to share their knowledge and help you grow.
                     </p>
                 </div>
-                <div>
+                <div class="text-center">
                     <button class="btn btn-primary" onclick="window.location.href='mentor-registration.html'">
                         Become a Mentor
                     </button>
@@ -79,27 +79,48 @@
         </section>
 
     <main class="mentor-page-content">
-        <div class="search-bar">
-            <div class="search-box">
-                <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                <input class="search-input" type="text" id="searchInput" placeholder="Search mentors by name or skills">
-            </div>
-            <select id="skillFilter" class="skill-filter">
-                <option value="" hidden>All Skills</option>
-                <option value="JavaScript">JavaScript</option>
-                <option value="Python">Python</option>
-                <option value="Java">Java</option>
-                <option value="C++">C++</option>
-            </select>
-        </div>
+        <main class="container my-5 d-flex flex-column align-items-center">
 
-        <div class="mentors-section">
-            <div id="emptyState" class="empty-state" style="display: block;">
-                <p class="empty-message">No mentors available yet.</p>
+            <!-- Search Bar -->
+            <div class="search-bar w-100 d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 mb-4">
+
+                <!-- Styled Search Box Like a Dropdown -->
+                <div class="search-box w-auto d-flex align-items-center rounded border px-2 py-1" style="height: 38px;">
+                  <div class="search-icon me-2 text-muted"><i class="fa-solid fa-magnifying-glass"></i></div>
+                  <input 
+                    class="form-control form-select-sm border-0 p-0 shadow-none" 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search mentors..." 
+                    style="width: 200px; background-color: transparent;">
+                </div>
+              
+                <!-- Skill Filter Dropdown -->
+                <select id="skillFilter" 
+        class="form-select form-select-sm w-auto" 
+        style="height: 38px; background-color: rgb(0, 0, 0); color: white;">
+  <option value="" hidden>All Skills</option>
+  <option value="JavaScript">JavaScript</option>
+  <option value="Python">Python</option>
+  <option value="Java">Java</option>
+  <option value="C++">C++</option>
+</select>
+
+              
+              </div>
+              
+          
+            <!-- Mentors Section -->
+            <div class="mentors-section text-center w-100">
+              <div id="emptyState" class="empty-state" style="display: block;">
+                <p class="empty-message fs-5 text-muted">No mentors available yet.</p>
                 <button class="btn btn-primary" onclick="window.location.href='mentor-registration.html'">
-                    Be the First Mentor
+                  Be the First Mentor
                 </button>
+              </div>
             </div>
+          
+          </main>
             
             <div id="mentorsGrid" class="mentors-grid">
                 <!-- cards here -->
