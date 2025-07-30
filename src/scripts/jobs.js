@@ -1,6 +1,6 @@
 class JobSearchManager {
     constructor() {
-        this.apiKey = '92a968a7dcmshd58ec8b5bebbe63p1938eajsn44d49f288f24';
+        this.apiKey = '85fe8ca662msh34a47427753703cp1dbe4ejsn6a399be10b67';
         this.apiHost = 'jsearch.p.rapidapi.com';
         this.jobsContainer = document.getElementById('jobList');
         this.initializeEventListeners();
@@ -30,6 +30,7 @@ class JobSearchManager {
         const skill = document.getElementById('skillSelect').value;
         const location = document.getElementById('locationSelect').value;
         const platform = document.getElementById('platformSelect').value;
+        const type = document.getElementById('typeSelect').value;
 
         let query = 'developer jobs';
         if (skill) {
@@ -41,7 +42,10 @@ class JobSearchManager {
         if (platform) {
             query += ` on ${platform}`;
         }
-        await this.fetchJobs(query, location || 'india', platform || 'any');
+        if (type) {
+            query += ` (${type})`;
+        }
+        await this.fetchJobs(query, location || 'india', platform || 'any', type || 'any');
     }
 
     async loadDefaultJobs() {
@@ -51,7 +55,7 @@ class JobSearchManager {
     async fetchJobs(query, location = 'india') {
         this.showLoading();
         
-        const url = `https://jsearch.p.rapidapi.com/search?query=${encodeURIComponent(query)}&page=1&num_pages=1&country=in&date_posted=all`;
+        const url = `https://jsearch.p.rapidapi.com/search?query=${encodeURIComponent(query)}&page=1&num_pages=2&country=in&date_posted=all`;
         const options = {
             method: 'GET',
             headers: {
