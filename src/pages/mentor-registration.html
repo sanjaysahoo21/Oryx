@@ -10,225 +10,211 @@
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="../index.html">
-                <img src="../../public/assets/images/oryx-logo.png" alt="Oryx" class="image-fluid" width="60" height="50">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="discover.html">Discover</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="roadmaps.html">Roadmaps</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="community.html">Community</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="developers.html">Developers</a>
-                    </li>
-                </ul>
-                <div class="d-flex align-items-center">
-                    <div id="authButtons">
-                        <a href="auth.html" class="btn btn-primary">Sign In</a>
-                    </div>
-                    <div id="userMenu" class="dropdown d-none">
-                        <button class="btn btn-secondary dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown">
-                            <i class="bi bi-person-circle me-2"></i>
-                            <span id="userName">Guest User</span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end bg-secondary">
-                            <li><a class="text-cyan dropdown-item" href="../pages/portfolio.html"><i class="bi bi-person me-2"></i>Profile</a></li>
-                            <li><a class="text-cyan dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="text-cyan dropdown-item" href="#" onclick="logout()"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
-                        </ul>
-                    </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="../index.html">
+            <img src="../../public/assets/images/oryx-logo.png" alt="Oryx" class="image-fluid" width="60" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="discover.html">Discover</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="roadmaps.html">Roadmaps</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="community.html">Community</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="developers.html">Developers</a>
+                </li>
+            </ul>
+            <div class="d-flex align-items-center">
+                <div id="authButtons">
+                    <a href="auth.html" class="btn btn-primary">Sign In</a>
+                </div>
+                <div id="userMenu" class="dropdown d-none">
+                    <button class="btn btn-secondary dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle me-2"></i>
+                        <span id="userName">Guest User</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end bg-secondary">
+                        <li><a class="text-cyan dropdown-item" href="../pages/portfolio.html"><i class="bi bi-person me-2"></i>Profile</a></li>
+                        <li><a class="text-cyan dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="text-cyan dropdown-item" href="#" onclick="logout()"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </nav>
-    <main class="form-container">
-        <div class="main-header">
-            <h1>Become a Mentor</h1>
-            <p>Share your expertise and help others grow their skills</p>
+    </div>
+</nav>
+<main class="form-container py-5">
+    <div class="main-header text-center mb-5 mt-5">
+        <h1>Become a Mentor</h1>
+        <p>Share your expertise and help others grow their skills</p>
+    </div>
+    <div class="card mx-auto" style="max-width: 900px; color: white">
+        <div class="card-header text-center">
+            <h2>Create Your Mentor Profile</h2>
+            <p>Fill out the form below to create your mentor profile</p>
         </div>
-        <div class="card">
-            <div class="card-header">
-                <h2>Create Your Mentor Profile</h2>
-                <p>Fill out the form below to create your mentor profile</p>
-            </div>
-            <div class="card-content">
-                <form id="mentorForm" class="mentor-form">
-                    
-                    <section class="form-section">
-                        <h3 class="section-title">Basic Information</h3>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="name" class="form-label">Full Name *</label>
-                                <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="form-label">Email *</label>
-                                <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="bio" class="form-label">Bio *</label>
-                            <textarea id="bio" name="bio" class="form-textarea" rows="4" placeholder="Tell us about yourself and your experience..." required></textarea>
-                        </div>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="location" class="form-label">Location</label>
-                                <input type="text" id="location" name="location" class="form-input" placeholder="City, Country">
-                            </div>
-                            <div class="form-group">
-                                <label for="timezone" class="form-label">Timezone</label>
-                                <select id="timezone" name="timezone" class="form-select">
-                                    <option value="" hidden>Select timezone</option>
-                                    <option value="UTC-8">Pacific Time (UTC-8)</option>
-                                    <option value="UTC-5">Eastern Time (UTC-5)</option>
-                                    <option value="UTC+0">UTC</option>
-                                    <option value="UTC+1">Central European Time (UTC+1)</option>
-                                    <option value="UTC+5:30">India Standard Time (UTC+5:30)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </section>
+        <div class="card-content p-4">
+            <form id="mentorForm" class="mentor-form">
 
-                    <section class="form-section">
-                        <h3 class="section-title">Professional Information</h3>
-                        
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="experience" class="form-label">Years of Experience</label>
-                                <input type="text" id="experience" name="experience" class="form-input" placeholder="e.g., 5 years">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="hourlyRate" class="form-label">Hourly Rate (USD)</label>
-                                <input type="text" id="hourlyRate" name="hourlyRate" class="form-input" placeholder="e.g., $50">
-                            </div>
+                <!-- Basic Information -->
+                <section class="form-section mb-4">
+                    <h3 class="section-title text-center mb-3">Basic Information</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
                         </div>
-                        <div class="form-group">
-                            <label for="availability" class="form-label">Availability</label>
-                            <select id="availability" name="availability" class="form-select">
-                                <option value="">Select availability</option>
-                                <option value="full-time">Full Time</option>
-                                <option value="part-time">Part Time</option>
-                                <option value="weekends">Weekends Only</option>
-                                <option value="flexible">Flexible</option>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <label for="bio" class="form-label">Bio *</label>
+                        <textarea id="bio" name="bio" class="form-control" rows="4" placeholder="Tell us about yourself and your experience..." required></textarea>
+                    </div>
+
+                    <div class="row g-3 mt-3">
+                        <div class="col-md-6">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" id="location" name="location" class="form-control" placeholder="City, Country">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="timezone" class="form-label">Timezone</label>
+                            <select id="timezone" name="timezone" class="form-select">
+                                <option value="" hidden>Select timezone</option>
+                                <option value="UTC-8">Pacific Time (UTC-8)</option>
+                                <option value="UTC-5">Eastern Time (UTC-5)</option>
+                                <option value="UTC+0">UTC</option>
+                                <option value="UTC+1">Central European Time (UTC+1)</option>
+                                <option value="UTC+5:30">India Standard Time (UTC+5:30)</option>
                             </select>
                         </div>
-                    </section>
+                    </div>
+                </section>
 
-                    <section class="form-section">
-                        <h3 class="section-title">Skills</h3>
-                        
-                        <div class="skills-input">
-                            <input type="text" id="newSkill" class="form-input" placeholder="Add a skill">
-                            <button type="button" id="addSkillBtn" class="btn btn-icon">
-                                <i class="fas fa-plus"></i>
-                            </button>
+                <!-- Professional Info -->
+                <section class="form-section mb-4">
+                    <h3 class="section-title text-center mb-3">Professional Information</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="experience" class="form-label">Years of Experience</label>
+                            <input type="text" id="experience" name="experience" class="form-control" placeholder="e.g., 5 years">
                         </div>
-                        
-                        <div id="skillsList" class="tags-list">
-                            <!-- Skills will be added here -->
+                        <div class="col-md-6">
+                            <label for="hourlyRate" class="form-label">Hourly Rate (USD)</label>
+                            <input type="text" id="hourlyRate" name="hourlyRate" class="form-control" placeholder="e.g., $50">
                         </div>
-                    </section>
+                    </div>
+                    <div class="mt-3">
+                        <label for="availability" class="form-label">Availability</label>
+                        <select id="availability" name="availability" class="form-select">
+                            <option value="">Select availability</option>
+                            <option value="full-time">Full Time</option>
+                            <option value="part-time">Part Time</option>
+                            <option value="weekends">Weekends Only</option>
+                            <option value="flexible">Flexible</option>
+                        </select>
+                    </div>
+                </section>
 
-                    <section class="form-section">
-                        <h3 class="section-title">Languages</h3>
-                        
-                        <div class="skills-input">
-                            <input type="text" id="newLanguage" class="form-input" placeholder="Add a language">
-                            <button type="button" id="addLanguageBtn" class="btn btn-icon">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                        
-                        <div id="languagesList" class="tags-list">
-                            <!-- Languages will be added here -->
-                        </div>
-                    </section>
-
-                    <section class="form-section">
-                        <h3 class="section-title">Documents & Media</h3>
-                        
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label class="form-label">Profile Image</label>
-                                <button type="button" class="btn btn-outline upload-btn" onclick="handleFileUpload('profileImage')">
-                                    <i class="fas fa-upload"></i>
-                                    Upload Profile Image
-                                </button>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label">Resume</label>
-                                <button type="button" class="btn btn-outline upload-btn" onclick="handleFileUpload('resume')">
-                                    <i class="fas fa-upload"></i>
-                                    Upload Resume
-                                </button>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="form-section">
-                        <h3 class="section-title">Certificates</h3>
-                        
-                        <div class="skills-input">
-                            <input type="text" id="newCertificate" class="form-input" placeholder="Certificate name">
-                            <button type="button" id="addCertificateBtn" class="btn btn-icon">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                        
-                        <div id="certificatesList" class="tags-list">
-                            <!-- Certificates will be added here -->
-                        </div>
-                    </section>
-                    
-                    <section class="form-section">
-                        <h3 class="section-title">Links</h3>
-                        
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="portfolio" class="form-label">Portfolio URL</label>
-                                <input type="url" id="portfolio" name="portfolio" class="form-input" placeholder="https://your-portfolio.com">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="linkedin" class="form-label">LinkedIn URL</label>
-                                <input type="url" id="linkedin" name="linkedin" class="form-input" placeholder="https://linkedin.com/in/username">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="github" class="form-label">GitHub URL</label>
-                            <input type="url" id="github" name="github" class="form-input" placeholder="https://github.com/username">
-                        </div>
-                    </section>
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">
-                            Create Mentor Profile
-                        </button>
-                        <button type="button" class="btn btn-primary" onclick="window.location.href='mentor-page.html'">
-                            Cancel
+                <!-- Skills -->
+                <section class="form-section mb-4">
+                    <h3 class="section-title text-center mb-3">Skills</h3>
+                    <div class="d-flex gap-2 align-items-center">
+                        <input type="text" id="newSkill" class="form-control" placeholder="Add a skill">
+                        <button type="button" id="addSkillBtn" class="btn btn-outline-primary">
+                            <i class="fas fa-plus"></i>
                         </button>
                     </div>
-                </form>
-            </div>
+                    <div id="skillsList" class="tags-list mt-2"></div>
+                </section>
+
+                <!-- Languages -->
+                <section class="form-section mb-4">
+                    <h3 class="section-title text-center mb-3">Languages</h3>
+                    <div class="d-flex gap-2 align-items-center">
+                        <input type="text" id="newLanguage" class="form-control" placeholder="Add a language">
+                        <button type="button" id="addLanguageBtn" class="btn btn-outline-primary">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div id="languagesList" class="tags-list mt-2"></div>
+                </section>
+
+                <!-- Documents & Media -->
+                <section class="form-section mb-4">
+                    <h3 class="section-title text-center mb-3">Documents & Media</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6 text-center">
+                            <label class="form-label">Profile Image</label><br>
+                            <button type="button" class="btn btn-outline-secondary" onclick="handleFileUpload('profileImage')">
+                                <i class="fas fa-upload"></i> Upload Profile Image
+                            </button>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <label class="form-label">Resume</label><br>
+                            <button type="button" class="btn btn-outline-secondary" onclick="handleFileUpload('resume')">
+                                <i class="fas fa-upload"></i> Upload Resume
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certificates -->
+                <section class="form-section mb-4">
+                    <h3 class="section-title text-center mb-3">Certificates</h3>
+                    <div class="d-flex gap-2 align-items-center">
+                        <input type="text" id="newCertificate" class="form-control" placeholder="Certificate name">
+                        <button type="button" id="addCertificateBtn" class="btn btn-outline-primary">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div id="certificatesList" class="tags-list mt-2"></div>
+                </section>
+
+                <!-- Links -->
+                <section class="form-section mb-4">
+                    <h3 class="section-title text-center mb-3">Links</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="portfolio" class="form-label">Portfolio URL</label>
+                            <input type="url" id="portfolio" name="portfolio" class="form-control" placeholder="https://your-portfolio.com">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="linkedin" class="form-label">LinkedIn URL</label>
+                            <input type="url" id="linkedin" name="linkedin" class="form-control" placeholder="https://linkedin.com/in/username">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <label for="github" class="form-label">GitHub URL</label>
+                        <input type="url" id="github" name="github" class="form-control" placeholder="https://github.com/username">
+                    </div>
+                </section>
+
+                <!-- Buttons -->
+                <div class="form-actions text-center mt-4">
+                    <button type="submit" class="btn btn-primary px-4">Create Mentor Profile</button>
+                    <button type="button" class="btn btn-outline-secondary ms-3 px-4" onclick="window.location.href='mentor-page.html'">Cancel</button>
+                </div>
+            </form>
         </div>
-    </main>
-    <script src="../javascript/main.js"></script>
+    </div>
+</main>
+<script src="../javascript/main.js"></script>
 </body>
 </html>
