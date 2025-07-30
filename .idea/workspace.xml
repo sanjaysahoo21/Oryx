@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bdacce8-0c4c-4ed7-8d88-b51d27ac6029" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/MichealAI.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scripts/MichealAI.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/MichealAI.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/mentor-registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/mentor-registration.html" afterDir="false" />
-    </list>
+    <list default="true" id="2bdacce8-0c4c-4ed7-8d88-b51d27ac6029" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +62,7 @@
       <option name="presentableId" value="Default" />
       <updated>1753761843039</updated>
       <workItem from="1753761844152" duration="8848000" />
-      <workItem from="1753846211751" duration="9795000" />
+      <workItem from="1753846211751" duration="10405000" />
     </task>
     <servers />
   </component>
