@@ -50,24 +50,22 @@ document.addEventListener('DOMContentLoaded', () => {
         chatWindow.appendChild(messageWrapper);
     }
 
+    // Using OpenAI API implementation
     async function getAiResponse(prompt) {
-        // Replace with your actual API key
-        const apiKey = "YOUR_API_KEY_HERE";
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+        const apiKey = "AIzaSyBf4x4iiuNSwxiC-fM-ioeu7YZd82KefSw";
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
         const requestPayload = {
             contents: [{
                 role: "user",
-                parts: [{
-                    text: `You are a helpful and encouraging AI career assistant for a platform called Oryx. A user is asking for career advice. Keep your answers concise and helpful. User's query: "${prompt}"`
-                }]
+                parts: [{text: prompt}]
             }]
         };
 
         const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(requestPayload)
         });
@@ -78,12 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const result = await response.json();
 
-        if (result.candidates && result.candidates.length > 0 &&
-            result.candidates[0].content && result.candidates[0].content.parts &&
-            result.candidates[0].content.parts.length > 0) {
-            return result.candidates[0].content.parts[0].text;
-        } else {
-            return "I'm not sure how to respond to that. Could you please rephrase?";
-        }
+        const aiText = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+        return aiText || "I'm not sure how to respond to that.";
     }
 });
