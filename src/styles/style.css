@@ -256,6 +256,34 @@ section {
     color: hsl(188, 86%, 53%) !important;
 }
 
+.created-posts {
+    height: 100svh;
+}
+
+.post-card {
+    background-color: rgba(30, 41, 59, 0.75);
+    border: 2px solid rgba(59, 130, 246, 0.2);
+    backdrop-filter: blur(5px);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.post-card:hover {
+    border-color: hsl(210, 95%, 70%);
+    box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+.btn svg {
+    fill: currentColor;
+    border: none;
+}
+
+.btn-link {
+    text-decoration: none;
+}
+.btn-link:hover {
+    filter: brightness(1.25);
+}
+
 /* Footer */
 footer {
     background: hsl(220, 15%, 8%) !important;
