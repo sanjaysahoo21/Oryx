@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bdacce8-0c4c-4ed7-8d88-b51d27ac6029" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/scripts/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MichealAI.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MichealAI.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/community.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/community.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/auth.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/developers.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/developers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/MichealAI.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/MichealAI.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/mentor-registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/mentor-registration.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,32 +21,32 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "history": [
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
     {
-      "state": "OPEN",
-      "author": "sanjaysahoo21"
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;author&quot;: &quot;sanjaysahoo21&quot;
     }
   ],
-  "lastFilter": {
-    "state": "OPEN",
-    "author": "sanjaysahoo21"
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;author&quot;: &quot;sanjaysahoo21&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/sanjaysahoo21/Oryx.git",
-    "accountId": "18d52b9a-bbfa-41e7-bdbc-262bd0b124e1"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/sanjaysahoo21/Oryx.git&quot;,
+    &quot;accountId&quot;: &quot;18d52b9a-bbfa-41e7-bdbc-262bd0b124e1&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -89,7 +89,9 @@
       <workItem from="1753761844152" duration="8848000" />
       <workItem from="1753846211751" duration="10900000" />
       <workItem from="1753883669384" duration="5112000" />
-      <workItem from="1753933449778" duration="10632000" />
+      <workItem from="1753933449778" duration="10923000" />
+      <workItem from="1753950504865" duration="3636000" />
+      <workItem from="1753975895177" duration="1866000" />
     </task>
     <servers />
   </component>
