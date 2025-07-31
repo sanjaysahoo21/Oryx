@@ -17,7 +17,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
                 <img src="../../public/assets/images/oryx-logo.png" alt="Oryx" class="image-fluid" width="60" height="50">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -26,24 +26,24 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link" href="../index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/discover.html">Discover</a>
+                        <a class="nav-link" href="discover.html">Discover</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/roadmaps.html">Roadmaps</a>
+                        <a class="nav-link" href="roadmaps.html">Roadmaps</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/community.html">Community</a>
+                        <a class="nav-link" href="community.html">Community</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/developers.html">Developers</a>
+                        <a class="nav-link" href="developers.html">Developers</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center">
                     <div id="authButtons">
-                        <a href="pages/auth.html" class="btn btn-primary">Sign In</a>
+                        <a href="auth.html" class="btn btn-primary">Sign In</a>
                     </div>
                     <div id="userMenu" class="dropdown d-none">
                         <button class="btn btn-secondary dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown">
@@ -51,7 +51,7 @@
                             <span id="userName">Guest User</span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end bg-secondary">
-                            <li><a class="text-cyan dropdown-item" href="./pages/portfolio.html"><i class="bi bi-person me-2"></i>Profile</a></li>
+                            <li><a class="text-cyan dropdown-item" href="portfolio.html"><i class="bi bi-person me-2"></i>Profile</a></li>
                             <li><a class="text-cyan dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="text-cyan dropdown-item" href="#" onclick="logout()"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
@@ -75,10 +75,22 @@
         </div>
         
         <hr>
+    </div>
 
-        <div class="d-flex justify-content-left mb-3">
-            <h2 class="text-left mb-0">Available Classes</h2>
+    <div class="container mb-3">
+        <h2 class="text-left mb-0">Available Classes</h2>
+        <div class="row mt-3 demo">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm demo">
+                    <div class="card-body">
+                        <h5 class="card-title demo text-cyan">Demo Class</h5>
+                        <p class="card-text demo text-muted">This is a demo class. When you join or create a real class, this card will be hidden.</p>
+                        <button class="btn btn-secondary demo" disabled>Join Demo</button>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
     </div>
 
