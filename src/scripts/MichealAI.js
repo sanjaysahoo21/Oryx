@@ -42,15 +42,37 @@ document.addEventListener('DOMContentLoaded', () => {
         const messageContent = document.createElement('div');
         messageContent.classList.add('message-content');
 
-        const paragraph = document.createElement('p');
-        paragraph.textContent = message;
+        if (sender === 'ai') {
+            messageContent.innerHTML = formatAIResponse(message);
+        } else {
+            const paragraph = document.createElement('p');
+            paragraph.textContent = message;
+            messageContent.appendChild(paragraph);
+        }
 
-        messageContent.appendChild(paragraph);
         messageWrapper.appendChild(messageContent);
         chatWindow.appendChild(messageWrapper);
     }
 
-    // Using OpenAI API implementation
+    function formatAIResponse(text) {
+        let formatted = text.replace(/\*\*([^*]+)\*\*/g, '<h6 class="text-muted fw-bold mt-3 mb-2">$1</h6>');
+        
+        formatted = formatted.replace(/\* ([^*\n]+)/g, '<div class="ms-3 mb-1">• $1</div>');
+        
+        formatted = formatted.replace(/(\d+\.\s+)([^0-9\n]+)/g, '<div class="mb-2"><strong>$1</strong>$2</div>');
+        
+        formatted = formatted.replace(/\. ([A-Z])/g, '.</p><p class="mb-2">$1');
+        
+        if (!formatted.includes('<')) {
+            formatted = `<p class="mb-2">${formatted}</p>`;
+        } else {
+            formatted = formatted.replace(/^([^<][^<>]*?)(<h6|<div)/g, '<p class="mb-2">$1</p>$2');
+            formatted = formatted.replace(/([^>])([^<>]+)$/g, '$1<p class="mb-2">$2</p>');
+        }
+        
+        return formatted;
+    }
+
     async function getAiResponse(prompt) {
         const apiKey = "AIzaSyBf4x4iiuNSwxiC-fM-ioeu7YZd82KefSw";
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;

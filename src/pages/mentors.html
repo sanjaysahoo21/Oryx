@@ -46,7 +46,7 @@
                             <span id="userName">Guest User</span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end bg-secondary">
-                            <li><a class="text-cyan dropdown-item" href="portfolio.html"><i class="bi bi-person me-2"></i>Profile</a></li>
+                            <li><a class="text-cyan dropdown-item" href="user_portfolio.html"><i class="bi bi-person me-2"></i>Profile</a></li>
                             <li><a class="text-cyan dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="text-cyan dropdown-item" href="#" onclick="logout()"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
@@ -81,10 +81,8 @@
     <main class="mentor-page-content">
         <main class="container my-5 d-flex flex-column align-items-center">
 
-            <!-- Search Bar -->
             <div class="search-bar w-100 d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 mb-4">
 
-                <!-- Styled Search Box Like a Dropdown -->
                 <div class="search-box w-auto d-flex align-items-center rounded border px-2 py-1" style="height: 38px;">
                   <div class="search-icon me-2 text-muted"><i class="fa-solid fa-magnifying-glass"></i></div>
                   <input 
@@ -95,7 +93,6 @@
                     style="width: 200px; background-color: transparent;">
                 </div>
               
-                <!-- Skill Filter Dropdown -->
                 <select id="skillFilter" 
         class="form-select form-select-sm w-auto" 
         style="height: 38px; background-color: rgb(0, 0, 0); color: white;">
@@ -110,7 +107,6 @@
               </div>
               
           
-            <!-- Mentors Section -->
             <div class="mentors-section text-center w-100">
               <div id="emptyState" class="empty-state" style="display: block;">
                 <p class="empty-message fs-5 text-muted">No mentors available yet.</p>
@@ -123,7 +119,6 @@
           </main>
             
             <div id="mentorsGrid" class="mentors-grid">
-                <!-- cards here -->
             </div>
         </div>
     </section>
