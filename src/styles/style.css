@@ -16,6 +16,7 @@ section {
     position: relative;
 }
 
+/* cards */
 .card {
     background: linear-gradient(135deg, hsl(220, 15%, 10%), hsl(220, 15%, 12%));
     border-radius: 12px;
@@ -32,6 +33,7 @@ section {
     cursor: pointer;
 }
 
+/* Form Styles */
 .form-control {
     background: rgba(30, 41, 59, 0.5);
     border: 1px solid rgba(59, 130, 246, 0.2);
@@ -73,6 +75,7 @@ section {
     background: rgba(3, 21, 39, 0.8) !important;
 }
 
+/* Texts */
 .text-cyan {
     color: hsl(188, 86%, 53%);
 }
@@ -89,6 +92,7 @@ section {
     color: hsl(220, 9%, 75%);
 }
 
+/* Background*/
 .bg-light {
     background: rgba(30, 41, 59, 0.3) !important;
 }
@@ -101,6 +105,7 @@ section {
     background: rgba(30, 41, 59, 0.2) !important;
 }
 
+/* Progress Bar */
 .loading-screen {
     position: fixed;
     top: 0;
@@ -156,6 +161,7 @@ section {
     border-radius: 4px;
 }
 
+/* Navigation */
 .navbar {
     background: hsl(220, 15%, 8%, 0.95) !important;
     backdrop-filter: blur(12px);
@@ -200,6 +206,7 @@ section {
 .dropdown-item:hover{
     background: rgba(30, 41, 59, 0.2) !important;
 }
+/* Buttons */
 .btn-primary {
     background: linear-gradient(135deg, hsl(210, 95%, 70%), hsl(180, 95%, 55%));
     border: none;
@@ -288,6 +295,7 @@ footer a:hover {
     transition: color 0.3s ease;
 }
 
+/* Animations */
 @keyframes fade-in-up {
     from {
         opacity: 0;
@@ -303,73 +311,4 @@ footer a:hover {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.6s ease-out;
-}
-
-/* Portfolio Page Specific Styles */
-.profile-image-container:hover .profile-overlay {
-    opacity: 1 !important;
-}
-
-.profile-img {
-    transition: all 0.3s ease;
-}
-
-.profile-image-container:hover .profile-img {
-    transform: scale(1.02);
-}
-
-.form-control:focus, .form-select:focus {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-}
-
-.btn {
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    transform: translateY(-1px);
-}
-
-.social-accounts-container .input-group:hover {
-    transform: translateY(-1px);
-}
-
-.card {
-    backdrop-filter: blur(10px);
-}
-
-.animate-fade-in {
-    animation: fadeInUp 0.6s ease-out forwards;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.form-label {
-    color: hsl(188, 86%, 53%) !important;
-}
-
-.input-group-text {
-    background: rgba(30, 41, 59, 0.4) !important;
-    color: hsl(188, 86%, 53%);
-}
-
-.btn-success {
-    background: linear-gradient(135deg, #10b981, #059669);
-    border: none;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-}
-
-.btn-success:hover {
-    background: linear-gradient(135deg, #059669, #047857);
-    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
 }
