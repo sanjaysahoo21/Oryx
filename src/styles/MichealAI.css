@@ -69,9 +69,11 @@ body {
 .typing-indicator span {
     height: 8px;
     width: 8px;
+    display: flex;
+    flex-direction: row;
     background-color: hsl(215, 20%, 65%);
     border-radius: 50%;
-    display: inline-block;
+    /*display: inline-block;*/
     animation: bounce 1.4s infinite ease-in-out both;
 }
 
