@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AI Career Assistant - Oryx</title>
+    <link rel="icon" type="image/png" href="../public/assets/images/oryx-logo.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../styles/style.css"/>
+    <link rel="stylesheet" href="../styles/MichealAI.css"/>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<!-- AI Chat Section -->
+<main class="container d-flex flex-column flex-grow-1 pt-5 mt-5">
+    <div class="text-center mb-4">
+        <h1 class="display-5 fw-bold text-info">AI Career Assistant</h1>
+        <p class="lead text-secondary">Ask me anything about career paths, skills, resumes, or interview prep!</p>
+    </div>
+
+    <div id="chat-window" class="chat-window flex-grow-1 overflow-auto px-3 d-flex flex-column gap-3">
+        <!-- AI Message -->
+        <div class="message ai-message align-self-start">
+            <div class="message-content p-3 rounded-4">
+                <p>Hello! I am Michael</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Typing Indicator -->
+    <div id="typing-indicator" class="typing-indicator d-none align-self-start">
+        <div class="message ai-message">
+            <div class="message-content py-3 px-4 rounded-4">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Form -->
+    <form id="chat-form" class="chat-form d-flex gap-2 p-3 border-top border-secondary-subtle">
+        <input type="text" id="message-input" class="form-control form-control-lg" placeholder="Type your message here..." autocomplete="off"/>
+        <button type="submit" class="btn btn-primary d-flex align-items-center justify-content-center">
+            <i class="bi bi-send-fill fs-5"></i>
+        </button>
+    </form>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../scripts/MichealAI.js"></script>
+</body>
+</html>

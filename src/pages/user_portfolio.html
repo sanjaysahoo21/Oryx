@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Oryx</title>
+    <link rel="icon" type="image/png" href="../../public/assets/images/oryx-logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/user_portfolio.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img src="../../public/assets/images/oryx-logo.png" alt="Oryx" class="image-fluid" width="60" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="discover.html">Discover</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="roadmaps.html">Roadmaps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="community.html">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="developers.html">Developers</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <div id="authButtons">
+                        <a href="auth.html" class="btn btn-primary">Sign In</a>
+                    </div>
+                    <div id="userMenu" class="dropdown d-none">
+                        <button class="btn btn-secondary dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle me-2"></i>
+                            <span id="userName">Guest User</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end bg-secondary">
+                            <li><a class="text-cyan dropdown-item" href="../pages/portfolio.html"><i class="bi bi-person me-2"></i>Profile</a></li>
+                            <li><a class="text-cyan dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="text-cyan dropdown-item" href="#" onclick="logout()"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav> <br><br>
+    <div class="container mt-5">
+        <div class="row g-4 justify-content-center align-items-stretch">
+            <!-- Sidebar -->
+            <div class="col-lg-4 d-flex flex-column gap-4">
+                <div class="card text-center p-4 h-100">
+                    <div class="profile-img mx-auto"></div>
+                    <h2>John Doe</h2>
+                    <p><strong>Email:</strong> john.doe@example.com</p>
+                    <p><strong>Location:</strong> New York, USA</p>
+                    <div class="d-grid gap-2 mt-3">
+                        <button class="btn btn-primary">Edit Profile</button>
+                        <label for="resumeFileInput" class="btn btn-outline">Upload Resume</label>
+                        <input type="file" id="resumeFileInput" accept=".pdf,.doc,.docx">
+                    </div>
+                </div>
+
+                <div class="card text-center p-4 h-100">
+                    <h2>Connections</h2>
+                    <p class="mb-1"><strong>1.2K</strong><br>Followers</p>
+                    <p><strong>500</strong><br>Following</p>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-8 d-flex flex-column gap-4">
+                <div class="card p-4 h-100">
+                    <h2>About Me</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+                </div>
+                <div class="card p-4 h-100">
+                    <h2>My Skills</h2>
+                    <p>JavaScript, HTML, CSS, React, Node.js</p>
+                    <p>Git, GitHub, Agile Methodologies</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main style="padding-top: 100px;">
+      <div class="container my-5">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="card-title text-cyan mb-4 text-center">My Portfolio</h2>
+            <div class="row gap-4 d-flex justify-content-center align-items-center">
+              <div class="col-4 d-flex flex-column justify-content-center align-items-center profile-img-section">
+                <label class="form-label mb-3 text-primary fs-4">Profile picture</label>
+                <div class="position-relative">
+                  <img src="../../public/assets/images/profiles/23A91A0541.jpg" alt="Harshit Profile" class="rounded-circle border profile-img" style="width: 250px; height: 250px; object-fit: cover;">
+                  <button type="button" class="btn btn-light position-absolute bottom-0 rounded-circle" style="left: 180px;">
+                    <i class="bi bi-camera"></i>
+                  </button>
+                </div>
+              </div>
+            <div class="col-7 flex-grow-1">
+                <div class="row">
+                    <div class="col">
+                        <div class="card h-100 border-warning shadow-sm">
+                            <div class="card-body d-flex">
+                                <img src="/public/assets/images/leetcode.png" alt="LeetCode" width="48" height="48" class="me-3">
+                                <div>
+                                    <h5 class="card-title mb-1 text-cyan">LeetCode</h5>
+                                    <p class="card-text mb-2 text-muted small">Problems Solved: <span class="fw-bold" id="leetcode-problems">...</span></p>
+                                    <p class="card-text mb-2 text-muted small">Global Ranking: <span class="fw-bold" id="leetcode-ranking">...</span></p>
+                                    <p class="card-text mb-2 text-muted small">Contest Rating: <span class="fw-bold" id="leetcode-rating">...</span></p>
+                                    <p class="card-text mb-2 text-muted small">Username: <span class="fw-bold" id="leetcode-username">...</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-success shadow-sm">
+                            <div class="card-body d-flex">
+                                <img src="/public/assets/images/gfg.png" alt="GeeksforGeeks" width="48" height="48" class=" me-3">
+                                <div>
+                                    <h5 class="card-title mb-1 text-cyan">GeeksforGeeks</h5>
+                                    <p class="card-text mb-2 text-muted small">Problems Solved: <span class="fw-bold" id="gfg-problems">...</span></p>
+                                    <p class="card-text mb-2 text-muted small">Coding Score: <span class="fw-bold" id="gfg-score">...</span></p>
+                                    <p class="card-text mb-2 text-muted small">Stars: <span class="fw-bold" id="gfg-stars">...</span></p>
+                                    <p class="card-text mb-2 text-muted small">Username: <span class="fw-bold" id="gfg-username">...</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <div class="card h-100 border-danger shadow-sm">
+                            <div class="card-body d-flex">
+                                <img src="/public/assets/images/codechef.png" alt="CodeChef" width="48" height="48" class="me-3">
+                                <div>
+                                    <h5 class="card-title mb-1 text-cyan">CodeChef</h5>
+                                    <p class="card-text mb-2 text-muted small">Problems Solved: <span class="fw-bold" id="codechef-problems">...</span></p>
+                                    <p class="card-text mb-2 text-muted small">Current Rating: <span class="fw-bold" id="codechef-rating">...</span></p>
+                                    <p class="card-text mb-2 text-muted small">Global Rank: <span class="fw-bold" id="codechef-rank">...</span></p>
+                                    <p class="card-text mb-2 text-muted small">Username: <span class="fw-bold" id="codechef-username">...</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 border-primary shadow-sm">
+                            <div class="card-body d-flex">
+                                <img src="/public/assets/images/hackerrank.png" alt="HackerRank" width="48" height="48" class="me-3">
+                                <div>
+                                    <h5 class="card-title mb-1 text-cyan">HackerRank</h5>
+                                    <p class="card-text mb-2 text-muted small">Problems Solved: <span class="fw-bold" id="hackerrank-problems">...</span></p>
+                                    <p class="card-text mb-2 text-muted small">Rank: <span class="fw-bold" id="hackerrank-rank">...</span></p>
+                                    <p class="card-text mb-2 text-muted small">Badges: <span class="fw-bold" id="hackerrank-badges">...</span></p>
+                                    <p class="card-text mb-2 text-muted small">Username: <span class="fw-bold" id="hackerrank-username">...</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="card border-dark shadow-sm">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="/public/assets/images/github.png" alt="GitHub" width="48" height="48" class="me-3">
+                                            <div>
+                                                <h5 class="card-title mb-1 text-cyan">GitHub</h5>
+                                                <p class="card-text mb-0 text-muted small">Username: <span class="fw-bold" id="github-username">...</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-center">
+                                            <div class="col">
+                                                <p class="card-text mb-2 text-muted small">Repos: <span class="fw-bold" id="github-repos">...</span></p>
+                                            </div>
+                                            <div class="col">
+                                                <p class="card-text mb-2 text-muted small">Stars: <span class="fw-bold" id="github-stars">...</span></p>
+                                            </div>
+                                            <div class="col">
+                                                <p class="card-text mb-2 text-muted small">Followers: <span class="fw-bold" id="github-followers">...</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h6 class="mb-3 text-cyan">Contribution Activity</h6>
+                                        <div id="github-heatmap" class="text-center">
+                                            <img src="" alt="GitHub Contribution Heatmap" class="img-fluid rounded" style="max-width: 100%; height: auto;">
+                                        </div>
+                                        <p class="text-muted small mt-2 text-center">Last 12 months of contribution activity</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="../../public/assets/images/oryx-logo.png" alt="Oryx" width="24" height="24" class="me-2">
+                        <span class="text-cyan fw-bold fs-5">Oryx</span>
+                    </div>
+                    <p class="text-muted small">
+                        Empowering careers through skill exchange, mentorship, and AI-powered learning tools.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="text-primary mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-muted text-decoration-none small">Home</a></li>
+                        <li><a href="discover.html" class="text-muted text-decoration-none small">Discover</a></li>
+                        <li><a href="roadmaps.html" class="text-muted text-decoration-none small">Roadmaps</a></li>
+                        <li><a href="community.html" class="text-muted text-decoration-none small">Community</a></li>
+                        <li><a href="about.html" class="text-muted text-decoration-none small">Developers</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="text-primary mb-3">Features</h5>
+                    <ul class="list-unstyled">
+                        <li class="text-muted small">Skill Exchange</li>
+                        <li class="text-muted small">Career Guidance</li>
+                        <li class="text-muted small">AI-Powered Tools</li>
+                        <li class="text-muted small">Expert Mentorship</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="text-primary mb-3">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li class="text-muted small">Aditya College</li>
+                        <li class="text-muted small">Andhra Pradesh, India</li>
+                        <li class="text-muted small">CSE Department</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="text-muted small mb-0">&copy; 2025 Oryx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/user_portfolio.js"></script>
+</body>
+</html>

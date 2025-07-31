@@ -1,0 +1,47 @@
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+    object-fit: cover;
+    margin-bottom: 15px;
+    background: #eee;
+}
+
+h2 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+p {
+    margin: 5px 0;
+    color: white;
+    line-height: 1.6;
+}
+
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+}
+
+.btn-outline:hover {
+    color: black;
+    background-color: #10b981;
+}
+
+.card {
+    border-radius: 20px;
+    transition: box-shadow 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#resumeFileInput {
+    display: none;
+}
