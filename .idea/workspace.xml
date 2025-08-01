@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bdacce8-0c4c-4ed7-8d88-b51d27ac6029" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MichealAI.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MichealAI.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/community.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/community.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/developers.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/developers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/discover.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/discover.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/jobs.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/jobs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/join.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/mentor-registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/mentor-registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/mentors.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/mentors.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/portfolio.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/portfolio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/roadmaps.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/roadmaps.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/user_portfolio.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user_portfolio.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +87,7 @@
       <workItem from="1753933449778" duration="10923000" />
       <workItem from="1753950504865" duration="3636000" />
       <workItem from="1753975895177" duration="3573000" />
-      <workItem from="1754013568225" duration="940000" />
+      <workItem from="1754013568225" duration="1737000" />
     </task>
     <servers />
   </component>
