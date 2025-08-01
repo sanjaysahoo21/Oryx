@@ -1,8 +1,8 @@
-# SkillSwap Pro
+# Oryx
 
 ## Overview
 
-SkillSwap Pro is a comprehensive platform designed to facilitate skill exchange, mentorship, and career development. The platform connects learners with mentors and peers, providing tools for collaborative learning and professional growth through AI-powered career assistance and job platform integration.
+Oryx is a comprehensive platform designed to facilitate skill exchange, mentorship, and career development. The platform connects learners with mentors and peers, providing tools for collaborative learning and professional growth through AI-powered career assistance and job platform integration.
 
 ## Features
 
@@ -44,7 +44,7 @@ SkillSwap Pro is a comprehensive platform designed to facilitate skill exchange,
 ## Project Structure
 
 ```
-SkillSwap/
+Oryx/
 ├── src/                    # Source code
 │   ├── index.html         # Main landing page
 │   ├── pages/             # HTML pages
