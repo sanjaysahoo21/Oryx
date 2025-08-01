@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bdacce8-0c4c-4ed7-8d88-b51d27ac6029" name="Changes" comment="some commits" />
+    <list default="true" id="2bdacce8-0c4c-4ed7-8d88-b51d27ac6029" name="Changes" comment="some commits">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/auth.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/community.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/community.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/portfolio.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/portfolio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/user_portfolio.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user_portfolio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +51,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -57,7 +67,7 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -89,7 +99,8 @@
       <workItem from="1753950504865" duration="3636000" />
       <workItem from="1753975895177" duration="3573000" />
       <workItem from="1754013568225" duration="1907000" />
-      <workItem from="1754018856944" duration="3719000" />
+      <workItem from="1754018856944" duration="4710000" />
+      <workItem from="1754023650204" duration="496000" />
     </task>
     <task id="LOCAL-00001" summary="some commits">
       <option name="closed" value="true" />

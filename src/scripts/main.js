@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     checkAuthStatus();
+    handleProtectedLinks(); // <-- ADD THIS LINE
     initializeAnimations();
 
     const currentPath = window.location.pathname;
@@ -156,8 +157,8 @@ function togglePassword(inputId) {
 
 function demoLogin() {
     const userData = {
-        name: 'Harshit Mummidi',
-        email: 'demo@skillswappro.com',
+        name: 'Sri Ganesh Menni',
+        email: 'sriganeshmenni@gmail.com',
         avatar: null
     };
     localStorage.setItem('skillswap_user', JSON.stringify(userData));
@@ -179,6 +180,35 @@ function logout() {
         window.location.reload();
     }, 1000);
 }
+
+function handleProtectedLinks() {
+    const isLoggedIn = !!localStorage.getItem('skillswap_user');
+    const protectedLinks = document.querySelectorAll('.protected-link');
+
+    protectedLinks.forEach(link => {
+        if (!isLoggedIn) {
+            // Visually disable Bootstrap buttons
+            if (link.classList.contains('btn')) {
+                link.classList.add('disabled');
+            }
+            
+            // Add a click listener to show a message
+            link.addEventListener('click', (event) => {
+                // Re-check login status on click, in case of dynamic changes
+                if (!localStorage.getItem('skillswap_user')) {
+                    event.preventDefault();
+                    showToast('Please log in to access this feature.', 'info');
+                }
+            });
+        } else {
+            // If logged in, ensure the link is not disabled
+            if (link.classList.contains('btn')) {
+                link.classList.remove('disabled');
+            }
+        }
+    });
+}
+
 function handleSignin() {
     showToast('Login coming soon!, continuing with Demo', 'info');
     demoLogin();

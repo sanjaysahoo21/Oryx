@@ -16,7 +16,6 @@ section {
     position: relative;
 }
 
-/* cards */
 .card {
     background: linear-gradient(135deg, hsl(220, 15%, 10%), hsl(220, 15%, 12%));
     border-radius: 12px;
@@ -75,7 +74,6 @@ section {
     background: rgba(3, 21, 39, 0.8) !important;
 }
 
-/* Texts */
 .text-cyan {
     color: hsl(188, 86%, 53%);
 }
@@ -92,7 +90,6 @@ section {
     color: hsl(220, 9%, 75%);
 }
 
-/* Background*/
 .bg-light {
     background: rgba(30, 41, 59, 0.3) !important;
 }
@@ -105,7 +102,6 @@ section {
     background: rgba(30, 41, 59, 0.2) !important;
 }
 
-/* Progress Bar */
 .loading-screen {
     position: fixed;
     top: 0;
@@ -256,35 +252,134 @@ section {
     color: hsl(188, 86%, 53%) !important;
 }
 
-.created-posts {
+.posts-page {
     height: 100svh;
 }
 
-.post-card {
-    background-color: rgba(30, 41, 59, 0.75);
-    border: 2px solid rgba(59, 130, 246, 0.2);
-    backdrop-filter: blur(5px);
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+.posts {
+    display: flex;
+    flex-direction: column; /* Changed from wrap to column for a consistent feed */
+    padding: 0; /* Remove padding as columns provide it */
+    gap: 1rem; /* Consistent gap between posts */
 }
 
-.post-card:hover {
+.post {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgba(30, 41, 59, 0.5);
+    color: white;
+    border: 2px solid  rgba(59, 130, 246, 0.2);
+}
+
+.post:hover {
     border-color: hsl(210, 95%, 70%);
     box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
 }
 
-.btn svg {
-    fill: currentColor;
+.top {
+    width: 100%;
+    height: 50px;
+    padding: 10px 0;
+    display: flex;
+}
+
+.image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: palevioletred;
+}
+
+.username {
+    position: absolute;
+    font-weight: bolder;
+    top: 35px;
+    left: 75px;
+}
+
+.edit {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 30px;
     border: none;
+    background: transparent;
+    right: 55px;
 }
 
-.btn-link {
-    text-decoration: none;
-}
-.btn-link:hover {
-    filter: brightness(1.25);
+.delete {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 30px;
+    border: none;
+    background: transparent;
+    right: 25px;
 }
 
-/* Footer */
+.reactions {
+    width: 100%;
+    height: 20px;
+    display: flex;
+}
+
+.like {
+    position: absolute;
+    padding-bottom: 20px;
+    width: 35px;
+    height: 35px;
+    left: 15px;
+    bottom: 20px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+}
+
+.dislike {
+    position: absolute;
+    padding-bottom: 20px;
+    width: 35px;
+    height: 35px;
+    left: 15px;
+    bottom: 15px;
+    border: none;
+    background: transparent;
+    left: 45px;
+}
+
+@media (min-width: 992px) {
+    .post-create {
+        position: sticky;
+        top: 100px;
+        align-self: flex-start;
+    }
+    .created-posts {
+        height: calc(100vh - 120px);
+        overflow-y: auto;
+    }
+}
+input[type="file"] {
+    background-color: transparent;
+    color: #ccc;
+}
+
+input[type="file"]::file-selector-button {
+    background-color: rgba(30, 41, 59, 0.5);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #0056b3;
+}
+
 footer {
     background: hsl(220, 15%, 8%) !important;
     border-top: 1px solid rgba(59, 130, 246, 0.1);
@@ -295,7 +390,6 @@ footer a:hover {
     transition: color 0.3s ease;
 }
 
-/* Animations */
 @keyframes fade-in-up {
     from {
         opacity: 0;
