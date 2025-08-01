@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Guide to the Oryx Platform</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* A subtle transition for card hover effects */
+        .feature-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 202, 255, 0.15);
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg bg-dark border-bottom border-secondary-subtle sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <i class="bi bi-shield-check text-info fs-4 me-2"></i>
+            <span class="fw-bold fs-5">Oryx Guide</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="#features" class="nav-link">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="bg-dark text-center border-bottom border-secondary-subtle">
+    <div class="container col-xxl-8 px-4 py-5">
+        <h1 class="display-4 fw-bold text-info mb-3">What is Oryx?</h1>
+        <p class="lead text-body-secondary">A simple guide to connecting your learning directly with your career goals.</p>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container py-5" id="features">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold">Your One-Stop Platform for Growth</h2>
+        <p class="text-body-secondary">Tools for students, teachers, and mentors to learn, connect, and find jobs.</p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="row g-4">
+        <!-- Sign Up Card -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card bg-dark border-secondary-subtle h-100 p-3 feature-card">
+                <div class="card-body text-center">
+                    <i class="bi bi-person-plus-fill text-info fs-1 mb-3"></i>
+                    <h3 class="card-title fs-4 fw-semibold">Create Your Profile</h3>
+                    <p class="card-text text-body-secondary">Quickly sign up to get your personal portfolio. Showcase your skills, track course progress, and make yourself visible to employers.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mentor Card -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card bg-dark border-secondary-subtle h-100 p-3 feature-card">
+                <div class="card-body text-center">
+                    <i class="bi bi-people-fill text-info fs-1 mb-3"></i>
+                    <h3 class="card-title fs-4 fw-semibold">Find a Mentor</h3>
+                    <p class="card-text text-body-secondary">Connect with experienced mentors for career guidance. Or, if you're an expert, sign up to teach and guide many students at once.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Career Plan Card -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card bg-dark border-secondary-subtle h-100 p-3 feature-card">
+                <div class="card-body text-center">
+                    <i class="bi bi-signpost-split-fill text-info fs-1 mb-3"></i>
+                    <h3 class="card-title fs-4 fw-semibold">Follow a Career Plan</h3>
+                    <p class="card-text text-body-secondary">Use our Career Roadmaps for step-by-step guides. Learn everything you need, from beginner to advanced skills, to succeed in your field.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Classes Card -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card bg-dark border-secondary-subtle h-100 p-3 feature-card">
+                <div class="card-body text-center">
+                    <i class="bi bi-easel2-fill text-info fs-1 mb-3"></i>
+                    <h3 class="card-title fs-4 fw-semibold">Take or Teach Classes</h3>
+                    <p class="card-text text-body-secondary">Teachers can easily create classes for multiple students. Students can browse, filter, and join courses with a simple search.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Career Help Card -->
+        <div class="col-lg-8 col-md-12">
+            <div class="card bg-dark border-secondary-subtle h-100 p-3 feature-card">
+                <div class="card-body">
+                    <div class="text-center">
+                        <i class="bi bi-briefcase-fill text-info fs-1 mb-3"></i>
+                        <h3 class="card-title fs-4 fw-semibold">Get Career & Job Help</h3>
+                    </div>
+                    <ul class="list-group list-group-flush mt-3">
+                        <li class="list-group-item bg-transparent border-secondary-subtle d-flex align-items-center">
+                            <i class="bi bi-robot me-3 fs-4 text-info"></i>
+                            <div><strong>AI Career Assistant:</strong> Get answers about careers and interviews from Michael, our AI bot.</div>
+                        </li>
+                        <li class="list-group-item bg-transparent border-secondary-subtle d-flex align-items-center">
+                            <i class="bi bi-search me-3 fs-4 text-info"></i>
+                            <div><strong>Job Search Portal:</strong> Find jobs and internships from top sites like LinkedIn, all in one place.</div>
+                        </li>
+                        <li class="list-group-item bg-transparent border-secondary-subtle d-flex align-items-center">
+                            <i class="bi bi-journal-richtext me-3 fs-4 text-info"></i>
+                            <div><strong>Career Guidelines Hub:</strong> Access resume tips and helpful guides to boost your job hunt.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="row mt-5" id="about">
+        <div class="col-12">
+            <div class="bg-dark rounded-4 p-5 text-center">
+                <h2 class="fw-bold">About Oryx</h2>
+                <p class="lead text-body-secondary mt-3">Our mission is to help people advance their careers through technology and community learning. Meet the team that built the platform on our "About Us" page.</p>
+                <p class="lead text-body-secondary mt-3 fst-italic">“We chose the name Oryx because the oryx is a strong and smart animal with long, sharp horns. These horns help it protect itself and move forward with confidence. Just like that, our platform helps people grow their skills, stay strong in their journey, and move ahead in the right direction. The name ‘Oryx’ shows power, focus, and confidence — things we want every user to feel.”</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
