@@ -7,7 +7,6 @@
     <list default="true" id="2bdacce8-0c4c-4ed7-8d88-b51d27ac6029" name="Changes" comment="some commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/community.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/community.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +94,7 @@
       <workItem from="1754013568225" duration="1907000" />
       <workItem from="1754018856944" duration="4710000" />
       <workItem from="1754023650204" duration="496000" />
-      <workItem from="1754024161684" duration="823000" />
+      <workItem from="1754024161684" duration="1639000" />
     </task>
     <task id="LOCAL-00001" summary="some commits">
       <option name="closed" value="true" />
