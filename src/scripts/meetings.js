@@ -1,21 +1,50 @@
-function generateMeetingId() {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    let id = '';
-    for (let i = 0; i < 11; i++) {
-        if (i === 3 || i === 7) {
-            id += '-';
-        } else {
-            id += characters.charAt(Math.floor(Math.random() * characters.length));
-        }
+function generateTeamsLink(meetingData) {
+    const subject = encodeURIComponent(meetingData.meetingTitle || 'Oryx Meeting');
+    
+    let teamsUrl = `https://teams.microsoft.com/l/meeting/new?subject=${subject}`;
+    
+    if (meetingData.meetingDate && meetingData.meetingTime) {
+        const startDateTime = new Date(`${meetingData.meetingDate}T${meetingData.meetingTime}`);
+        const startTime = startDateTime.toISOString().slice(0, 16);
+        teamsUrl += `&startTime=${startTime}`;
     }
-    if (document.getElementById('meetingId')) {
-        document.getElementById('meetingId').value = id;
+    
+    if (meetingData.description) {
+        const content = encodeURIComponent(
+            `Subject: ${meetingData.subject || 'General'}\n` +
+            `Level: ${meetingData.level || 'All levels'}\n` +
+            `Mentor: ${meetingData.mentorName}\n` +
+            `Duration: ${meetingData.duration} minutes\n\n` +
+            `Description: ${meetingData.description}`
+        );
+        teamsUrl += `&content=${content}`;
     }
-    return id;
+    
+    return teamsUrl;
 }
 
-function generateMeetingLink(meetingId) {
-    return `https://teams.microsoft.com/l/meetup-join/19%3ameeting_${meetingId}`;
+function isValidMeetingLink(url) {
+    if (!url || typeof url !== 'string') return false;
+    
+    try {
+        new URL(url);
+        
+        const validPlatforms = [
+            'teams.microsoft.com',
+            'zoom.us',
+            'meet.google.com',
+            'webex.com',
+            'gotomeeting.com',
+            'bluejeans.com',
+            'skype.com',
+            'discord.com',
+            'whereby.com'
+        ];
+        
+        return validPlatforms.some(platform => url.toLowerCase().includes(platform));
+    } catch (error) {
+        return false;
+    }
 }
 
 function formatDate(dateString) {
@@ -40,24 +69,36 @@ function formatTime(timeString) {
 }
 
 function saveMeeting(meeting) {
-    let meetings = JSON.parse(localStorage.getItem('oryx_meetings') || '[]');
-    meetings.push(meetingData);
-    localStorage.setItem('oryx_meetings', JSON.stringify(meetings));
+    try {
+        let meetings = JSON.parse(localStorage.getItem('oryx_meetings') || '[]');
+        meetings.push(meeting);
+        localStorage.setItem('oryx_meetings', JSON.stringify(meetings));
+        return true;
+    } catch (error) {
+        return false;
+    }
 }
 
-function selectPrivacy(button, privacy) {
-    document.querySelectorAll('.card').forEach(card => {
-        if (card.querySelector('input[name="privacy"]')) {
-            card.style.borderColor = '';
-            card.style.boxShadow = '';
-        }
-    });
-    
-    const selectedCard = document.getElementById(option).closest('.card');
-    selectedCard.style.borderColor = 'hsl(210, 95%, 70%)';
-    selectedCard.style.boxShadow = '0 8px 20px hsl(210, 95%, 70%, 0.3)';
-    
-    document.getElementById(option).checked = true;
+function clearAllMeetings() {
+    localStorage.removeItem('oryx_meetings');
+}
+
+function refreshDemoData() {
+    const demoData = createDemoData();
+    localStorage.setItem('oryx_meetings', JSON.stringify(demoData));
+    if (typeof displayMeetings === 'function') {
+        displayMeetings();
+    }
+}
+
+function debugLocalStorage() {
+    const meetings = JSON.parse(localStorage.getItem('oryx_meetings') || '[]');
+    return meetings;
+}
+
+function getMeetingById(id) {
+    const meetings = loadMeetings();
+    return meetings.find(meeting => meeting.id === id);
 }
 
 function createDemoData() {
@@ -91,7 +132,7 @@ function createDemoData() {
             maxParticipants: '25',
             allowRecording: true,
             enableChat: true,
-            meetingLink: 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_JS1-B2C-3D4',
+            meetingLink: 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_js_demo_001',
             createdAt: new Date().toISOString(),
             formattedDate: today.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
             formattedTime: '2:00 PM'
@@ -111,7 +152,7 @@ function createDemoData() {
             maxParticipants: '15',
             allowRecording: false,
             enableChat: true,
-            meetingLink: 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_MTH-A1B-2C3',
+            meetingLink: 'https://zoom.us/j/123456789?pwd=demo_math_meeting',
             createdAt: new Date().toISOString(),
             formattedDate: tomorrow.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
             formattedTime: '10:30 AM'
@@ -127,11 +168,11 @@ function createDemoData() {
             duration: '180',
             mentorName: 'Dr. Emily Rodriguez',
             privacy: 'public',
-            meetingId: 'DS1-P2Y-3TH',
+            meetingId: '123456789',
             maxParticipants: '30',
             allowRecording: true,
             enableChat: true,
-            meetingLink: 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_DS1-P2Y-3TH',
+            meetingLink: 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_example123%40thread.v2/0?context=%7b%22Tid%22%3a%22example-tenant-id%22%2c%22Oid%22%3a%22example-organizer-id%22%7d',
             createdAt: new Date().toISOString(),
             formattedDate: nextWeek.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
             formattedTime: '4:00 PM'
@@ -151,7 +192,7 @@ function createDemoData() {
             maxParticipants: '20',
             allowRecording: true,
             enableChat: true,
-            meetingLink: 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_WEB-F1R-2S3',
+            meetingLink: 'https://meet.google.com/abc-defg-hij',
             createdAt: new Date().toISOString(),
             formattedDate: yesterday.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
             formattedTime: '3:00 PM'
@@ -171,7 +212,7 @@ function createDemoData() {
             maxParticipants: '18',
             allowRecording: false,
             enableChat: true,
-            meetingLink: 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_STAT-P1B-2L3',
+            meetingLink: 'https://webex.com/meet/demo-stats-meeting',
             createdAt: new Date().toISOString(),
             formattedDate: lastWeek.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
             formattedTime: '11:00 AM'
@@ -183,7 +224,7 @@ function loadMeetings() {
     let meetings = JSON.parse(localStorage.getItem('oryx_meetings') || '[]');
     
     if (!meetings || meetings.length === 0) {
-        const defaultMeetings = getDefaultMeetings();
+        const defaultMeetings = createDemoData();
         localStorage.setItem('oryx_meetings', JSON.stringify(defaultMeetings));
         meetings = defaultMeetings;
     }
@@ -213,6 +254,13 @@ function createMeetingCard(meeting) {
         statusText = 'Today';
     }
 
+    // Check if meeting has valid join link
+    const hasValidLink = meeting.meetingLink && isValidMeetingLink(meeting.meetingLink);
+    
+    if (isUpcoming && !hasValidLink) {
+        return '';
+    }
+
     const durationText = meeting.duration >= 60 
         ? `${Math.floor(meeting.duration / 60)}h ${meeting.duration % 60 > 0 ? (meeting.duration % 60) + 'm' : ''}`.trim()
         : `${meeting.duration}m`;
@@ -234,7 +282,7 @@ function createMeetingCard(meeting) {
                         <div class="d-flex align-items-center mb-2">
                             <i class="fas fa-book text-cyan me-2" style="width: 16px;"></i>
                             <span class="small text-light">${meeting.subject || 'General'}</span>
-                            ${meeting.level ? `<span class="badge bg-light text-dark ms-2 small">${meeting.level}</span>` : ''}
+                            ${meeting.level ? `<span class="badge bg-light text-muted ms-2 small">${meeting.level}</span>` : ''}
                         </div>
                         <div class="d-flex align-items-center mb-2">
                             <i class="fas fa-calendar text-cyan me-2" style="width: 16px;"></i>
@@ -245,8 +293,8 @@ function createMeetingCard(meeting) {
                             <span class="small text-light">${meeting.formattedTime} • ${durationText}</span>
                         </div>
                         <div class="d-flex align-items-center mb-2">
-                            <i class="fab fa-microsoft text-cyan me-2" style="width: 16px;"></i>
-                            <span class="small text-light">Microsoft Teams</span>
+                            <i class="fas fa-link text-cyan me-2" style="width: 16px;"></i>
+                            <span class="small text-light">Online Meeting</span>
                         </div>
                     </div>
 
@@ -277,9 +325,14 @@ function createMeetingCard(meeting) {
                             <button class="btn ${joinButtonClass} btn-sm flex-grow-1" onclick="joinMeeting('${meeting.id}')">
                                 <i class="fas fa-video me-1"></i>${joinButtonText}
                             </button>
-                            <button class="btn btn-outline-primary btn-sm" onclick="copyMeetingId('${meeting.meetingId}')" title="Copy Meeting ID">
-                                <i class="fas fa-copy"></i>
-                            </button>
+                            ${hasValidLink ? 
+                                `<button class="btn btn-outline-primary btn-sm" onclick="copyMeetingLink('${meeting.id}')" title="Copy Meeting Link">
+                                    <i class="fas fa-link"></i>
+                                </button>` :
+                                `<button class="btn btn-outline-secondary btn-sm" disabled title="No link available">
+                                    <i class="fas fa-link-slash"></i>
+                                </button>`
+                            }
                             <button class="btn btn-outline-info btn-sm" onclick="viewMeetingDetails('${meeting.id}')" title="View Details">
                                 <i class="fas fa-info"></i>
                             </button>
@@ -319,8 +372,12 @@ function displayMeetings(meetings = null) {
     
     meetings.forEach(meeting => {
         const meetingDateTime = new Date(meeting.meetingDate + ' ' + meeting.meetingTime);
+        const hasValidLink = meeting.meetingLink && isValidMeetingLink(meeting.meetingLink);
+        
         if (meetingDateTime > now) {
-            upcomingMeetings.push(meeting);
+            if (hasValidLink) {
+                upcomingMeetings.push(meeting);
+            }
         } else {
             completedMeetings.push(meeting);
         }
@@ -332,7 +389,6 @@ function displayMeetings(meetings = null) {
         return dateA - dateB;
     });
     
-    // Sort completed meetings by most recent first
     completedMeetings.sort((a, b) => {
         const dateA = new Date(a.meetingDate + ' ' + a.meetingTime);
         const dateB = new Date(b.meetingDate + ' ' + b.meetingTime);
@@ -362,7 +418,48 @@ function displayMeetings(meetings = null) {
     }
 }
 
-// Join meeting function
+function completeMeetingCreation() {
+    const meetingLink = document.getElementById('meetingLink').value.trim();
+    
+    if (!meetingLink) {
+        alert('Please paste the meeting link to complete the setup.');
+        document.getElementById('meetingLink').focus();
+        return;
+    }
+    
+    if (!isValidMeetingLink(meetingLink)) {
+        alert('Please paste a valid meeting link (Teams, Zoom, Google Meet, etc.)');
+        document.getElementById('meetingLink').focus();
+        return;
+    }
+    
+    const meetingData = window.tempMeetingData;
+    if (!meetingData) {
+        alert('Error: Meeting data not found. Please try again.');
+        return;
+    }
+    
+    meetingData.meetingLink = meetingLink;
+    
+    const saveSuccess = saveMeeting(meetingData);
+    
+    if (!saveSuccess) {
+        alert('Error saving meeting. Please try again.');
+        return;
+    }
+    
+    document.getElementById('scheduleMeetingBtn').innerHTML = '<i class="fas fa-check me-2"></i>Meeting Scheduled!';
+    document.getElementById('scheduleMeetingBtn').classList.remove('btn-success');
+    document.getElementById('scheduleMeetingBtn').classList.add('btn-primary');
+    document.getElementById('scheduleMeetingBtn').disabled = true;
+    
+    window.tempMeetingData = null;
+    
+    setTimeout(() => {
+        window.location.href = 'join.html';
+    }, 1500);
+}
+
 function joinMeeting(meetingId) {
     const meetings = loadMeetings();
     const meeting = meetings.find(m => m.id === meetingId);
@@ -371,17 +468,37 @@ function joinMeeting(meetingId) {
         if (meeting.meetingLink) {
             window.open(meeting.meetingLink, '_blank');
         } else {
-            // Generate a Teams-like meeting URL
-            const teamsUrl = `https://teams.microsoft.com/l/meetup-join/19%3ameeting_${meeting.meetingId}`;
-            window.open(teamsUrl, '_blank');
+            alert('Meeting link not available. Please contact the meeting organizer.');
         }
+    } else {
+        alert('Meeting not found. Please check the meeting ID.');
     }
 }
 
-// Copy meeting ID
+function copyMeetingLink(meetingId) {
+    const meetings = loadMeetings();
+    const meeting = meetings.find(m => m.id === meetingId);
+    
+    if (meeting && meeting.meetingLink) {
+        navigator.clipboard.writeText(meeting.meetingLink).then(() => {
+            const originalText = event.target.innerHTML;
+            event.target.innerHTML = '<i class="fas fa-check me-1"></i>Copied!';
+            event.target.classList.remove('btn-outline-primary');
+            event.target.classList.add('btn-success');
+            
+            setTimeout(() => {
+                event.target.innerHTML = originalText;
+                event.target.classList.remove('btn-success');
+                event.target.classList.add('btn-outline-primary');
+            }, 2000);
+        });
+    } else {
+        alert('Meeting link not available yet.');
+    }
+}
+
 function copyMeetingId(meetingId) {
     navigator.clipboard.writeText(meetingId).then(() => {
-        // Show success feedback
         const originalText = event.target.innerHTML;
         event.target.innerHTML = '<i class="fas fa-check me-1"></i>Copied!';
         event.target.classList.remove('btn-outline-primary');
@@ -395,7 +512,6 @@ function copyMeetingId(meetingId) {
     });
 }
 
-// View meeting details
 function viewMeetingDetails(meetingId) {
     const meetings = loadMeetings();
     const meeting = meetings.find(m => m.id === meetingId);
@@ -470,27 +586,22 @@ function viewMeetingDetails(meetingId) {
             </div>
         `;
 
-        // Remove existing modal if any
         const existingModal = document.getElementById('meetingDetailsModal');
         if (existingModal) {
             existingModal.remove();
         }
 
-        // Add modal to body
         document.body.insertAdjacentHTML('beforeend', detailsHTML);
 
-        // Show modal
         const modal = new bootstrap.Modal(document.getElementById('meetingDetailsModal'));
         modal.show();
 
-        // Clean up modal after it's hidden
         document.getElementById('meetingDetailsModal').addEventListener('hidden.bs.modal', function () {
             this.remove();
         });
     }
 }
 
-// Search functionality
 function searchMeetings() {
     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
     const allMeetings = loadMeetings();
@@ -506,11 +617,9 @@ function searchMeetings() {
     displayMeetings(filteredMeetings);
 }
 
-// Initialize meetings page
 function initializeMeetingsPage() {
     displayMeetings();
     
-    // Setup search functionality
     if (document.getElementById('searchButton')) {
         document.getElementById('searchButton').addEventListener('click', searchMeetings);
     }
@@ -522,7 +631,6 @@ function initializeMeetingsPage() {
             }
         });
         
-        // Clear search when input is empty
         document.getElementById('searchInput').addEventListener('input', function(e) {
             if (e.target.value === '') {
                 displayMeetings();
@@ -531,9 +639,9 @@ function initializeMeetingsPage() {
     }
 }
 
-// Initialize create form page
 function initializeCreateFormPage() {
-    generateMeetingId();
+    console.log('Initializing create form page...');
+    
     const today = new Date().toISOString().split('T')[0];
     if (document.getElementById('meetingDate')) {
         document.getElementById('meetingDate').min = today;
@@ -546,31 +654,82 @@ function initializeCreateFormPage() {
         selectedCard.style.boxShadow = '0 8px 20px hsl(210, 95%, 70%, 0.3)';
     }
     
-    if (document.getElementById('createClassForm')) {
-        document.getElementById('createClassForm').addEventListener('submit', function(e) {
+    const form = document.getElementById('createClassForm');
+    if (form) {
+        console.log('Form found, adding event listener...');
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
-            const formData = new FormData(this);
-            const meetingData = Object.fromEntries(formData);
-            meetingData.id = Math.random().toString(36).substr(2, 9);
-            meetingData.meetingLink = generateMeetingLink(meetingData.meetingId);
-            meetingData.createdAt = new Date().toISOString();
+            console.log('Form submission triggered!');
+            
+            const meetingData = {
+                id: Math.random().toString(36).substr(2, 9),
+                meetingTitle: document.getElementById('meetingTitle')?.value?.trim() || '',
+                subject: document.getElementById('subject')?.value?.trim() || '',
+                level: document.getElementById('level')?.value?.trim() || '',
+                description: document.getElementById('description')?.value?.trim() || '',
+                meetingDate: document.getElementById('meetingDate')?.value || '',
+                meetingTime: document.getElementById('meetingTime')?.value || '',
+                duration: document.getElementById('duration')?.value || '60',
+                mentorName: document.getElementById('mentorName')?.value?.trim() || '',
+                meetingLink: null,
+                privacy: 'public',
+                meetingId: Math.random().toString(36).substr(2, 9).toUpperCase(),
+                maxParticipants: document.getElementById('maxParticipants')?.value || '20',
+                allowRecording: document.getElementById('allowRecording')?.checked || false,
+                enableChat: document.getElementById('enableChat')?.checked || false,
+                createdAt: new Date().toISOString()
+            };
+            
             meetingData.formattedDate = formatDate(meetingData.meetingDate);
             meetingData.formattedTime = formatTime(meetingData.meetingTime);
-            saveMeeting(meetingData);
-            alert(`Meeting created successfully!\n\nMeeting ID: ${meetingData.meetingId}\nTitle: ${meetingData.meetingTitle}\nDate: ${meetingData.formattedDate}\nTime: ${meetingData.formattedTime}`);
-            window.location.href = 'join.html';
+            
+            const requiredFields = [
+                { field: 'meetingTitle', name: 'Meeting Title', value: meetingData.meetingTitle },
+                { field: 'meetingDate', name: 'Date', value: meetingData.meetingDate },
+                { field: 'meetingTime', name: 'Time', value: meetingData.meetingTime },
+                { field: 'mentorName', name: 'Mentor Name', value: meetingData.mentorName }
+            ];
+            
+            const missingFields = requiredFields.filter(field => !field.value);
+            
+            if (missingFields.length > 0) {
+                const missingFieldNames = missingFields.map(field => field.name).join(', ');
+                alert(`Please fill in all required fields: ${missingFieldNames}`);
+                return;
+            }
+            
+            window.tempMeetingData = meetingData;
+            
+            const teamsUrl = generateTeamsLink(meetingData);
+            window.open(teamsUrl, '_blank');
+            
+            document.getElementById('meetingLinkSection').style.display = 'block';
+            
+            document.getElementById('scheduleMeetingBtn').onclick = function() {
+                completeMeetingCreation();
+            };
+            
+            document.getElementById('meetingLinkSection').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
         });
+    } else {
+        console.error('Form with ID createClassForm not found!');
     }
 }
 
-// Auto-initialize based on page content
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if this is the join page
+    console.log('DOM loaded, checking for elements...');
+    
     if (document.getElementById('upcomingMeetingsContainer') || document.getElementById('searchButton')) {
+        console.log('Join page detected, initializing...');
         initializeMeetingsPage();
     }
-    // Check if this is the create page
     else if (document.getElementById('createClassForm')) {
+        console.log('Create page detected, initializing...');
         initializeCreateFormPage();
+    } else {
+        console.log('No recognized page elements found');
     }
 });

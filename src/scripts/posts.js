@@ -24,7 +24,7 @@ function createPost(post) {
             fileHTML = `<img src="${post.file}" class="img-fluid rounded mt-2" alt="User upload" style="max-height: 300px;">`;
         } else {
             fileHTML = `<div class="mt-2">
-                <a href="${post.file}" class="btn btn-sm btn-outline-secondary" download="attachment">
+                <iframe src="${post.file}" class="img-fluid rounded" style="max-height: 300px; width: 100%;" frameborder="0"></iframe>
                     <i class="bi bi-paperclip"></i> Download Attached File
                 </a>
             </div>`;
