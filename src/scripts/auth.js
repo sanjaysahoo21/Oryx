@@ -13,7 +13,7 @@ function togglePassword(fieldId, iconId) {
 }
 
 function socialLogin(provider) {
-    showMessage(Login with ${provider} is not implemented.);
+    showMessage(`Login with ${provider} is not implemented.`);
 }
 
 function demoLogin() {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (loggedInUserEmail) {
         authFormContainer.classList.add('d-none');
         loggedInView.classList.remove('d-none');
-        loggedInEmailEl.textContent = Logged in as: ${loggedInUserEmail};
+        loggedInEmailEl.textContent = `Logged in as: ${loggedInUserEmail}`;
     }
 
     logoutButton.addEventListener('click', () => {
