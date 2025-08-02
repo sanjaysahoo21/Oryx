@@ -16,10 +16,10 @@ function socialLogin(provider) {
     showMessage(`Login with ${provider} is not implemented.`);
 }
 
-function demoLogin() {
-    document.getElementById('signinEmail').value = 'demo@example.com';
-    document.getElementById('signinPassword').value = 'password123';
-}
+// function demoLogin() {
+//     document.getElementById('signinEmail').value = 'demo@example.com';
+//     document.getElementById('signinPassword').value = 'password123';
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
     const signinForm = document.getElementById('signinForm');
