@@ -71,7 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const loggedInUserEmail = localStorage.getItem(LOGGED_IN_USER_KEY);
     if (loggedInUserEmail) {
-        updateViewForLoggedInUser(loggedInUserEmail);
+
+        authFormContainer.classList.add('d-none');
+        loggedInView.classList.remove('d-none');
+        loggedInEmailEl.textContent = `Logged in as: ${loggedInUserEmail}`;
+
     }
 
     if (logoutButton) {
