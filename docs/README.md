@@ -165,11 +165,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Team Members
 
 - SRI GANESH MENNI - Full Stack Developer
-- Eathakottu Sanjay - Frontend Developer  
-- YASWANTH AMJURI - Backend Developer
-- SINGIRI SIVAJI - UI/UX Designer
-- SANA CHANDRA VAMSI - Project Manager
-- SIBANDA NKOSINATHI MICHAEL - Systems Architect
+- Eathakottu Sanjay - Full Stack Developer
+- YASWANTH AMJURI - Full Stack Developer
+- SINGIRI SIVAJI - Full Stack Developer
+- SANA CHANDRA VAMSI - Project Full Stack Developer
+- SIBANDA NKOSINATHI MICHAEL - Full Stack Developer
 
 ## Changelog
 
@@ -189,10 +189,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - ✅ Professional documentation
 
 ### [Upcoming Features]
-- Backend API development
 - Real-time chat system
-- Video call integration
-- AI-powered career recommendations
 - Payment system integration
 - Mobile app development
 
