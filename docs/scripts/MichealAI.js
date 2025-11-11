@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function getAiResponse(prompt) {
-        const apiKey = "AIzaSyBf4x4iiuNSwxiC-fM-ioeu7YZd82KefSw";
+        const apiKey = "AIzaSyDj-7OoRjAFkAEQiK-mxWKSGSGnTPidQP4";
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
         const requestPayload = {
