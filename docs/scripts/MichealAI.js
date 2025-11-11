@@ -74,31 +74,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function getAiResponse(prompt) {
+        // Using Google Gemini API (free tier available)
         const apiKey = "AIzaSyDj-7OoRjAFkAEQiK-mxWKSGSGnTPidQP4";
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+        const apiUrl = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${apiKey}`;
 
+        // Gemini's correct request format
         const requestPayload = {
             contents: [{
-                role: "user",
-                parts: [{text: prompt}]
-            }]
+                parts: [{
+                    text: `You are Michele AI, a helpful and friendly assistant.\n\nUser: ${prompt}\nMichele AI:`
+                }]
+            }],
+            generationConfig: {
+                temperature: 0.7,
+                maxOutputTokens: 1000
+            }
         };
 
         const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
+                // ✅ No Authorization header—Gemini uses API key in URL
             },
             body: JSON.stringify(requestPayload)
         });
 
-        if (!response.ok) {
-            throw new Error(`API request failed with status ${response.status}`);
+        let resultJson = null;
+        try {
+            resultJson = await response.json();
+            console.log("Gemini Response:", resultJson); // For debugging
+        } catch (e) {
+            throw new Error(`Failed to parse API response: ${e.message}`);
         }
 
-        const result = await response.json();
+        if (!response.ok) {
+            const apiErr = resultJson?.error?.message || `API request failed with status ${response.status}`;
+            console.error("Gemini API Error:", resultJson);
+            throw new Error(apiErr);
+        }
 
-        const aiText = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+        // ✅ Gemini's response structure is different from OpenAI
+        const aiText = resultJson?.candidates?.[0]?.content?.parts?.[0]?.text;
         return aiText || "I'm not sure how to respond to that.";
     }
 });
